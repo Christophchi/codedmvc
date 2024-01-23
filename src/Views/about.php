@@ -1,0 +1,1 @@
+this about us is generated from plates template <?= $name  ?>

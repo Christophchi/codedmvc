@@ -1,0 +1,48 @@
+#!/usr/bin/php
+<?php
+require_once './src/Console/Generator.php';
+
+$command = $argv[1] ?? '';
+$extraArg = $argv[2] ?? '';
+$view_suggestions = ['create-view', 'create-middleware', 'create-controller']; // Example suggestions
+
+// Command initiators
+switch ($command) {
+    case 'create-view':
+        generateView($extraArg);
+        break;
+
+    case 'create-middleware':
+        generateMiddleware($extraArg); // Assuming generateMiddleware exists in Generator.php
+        break;
+
+    case 'create-controller':
+        generateController($extraArg); // Assuming generateController exists in Generator.php
+        break;
+
+    default:
+        echo "Command not recognized. Available commands:\n";
+        // List available suggestions with numbers
+        foreach ($view_suggestions as $key => $suggestion) {
+            echo ($key + 1) . ". $suggestion\n";
+        }
+        echo "Please enter the number corresponding to the command you want to execute: ";
+        
+        // Read user input for suggested command number
+        $selectedCommand = readline();
+        $selectedCommandIndex = (int)$selectedCommand - 1;
+        
+        if (isset($view_suggestions[$selectedCommandIndex])) {
+            $selectedCommandName = $view_suggestions[$selectedCommandIndex];
+            echo "Running command: $selectedCommandName\n";
+            
+            // Perform the selected command using exec
+            $output = exec("php run $selectedCommandName");
+            
+            // Display the output or handle it as needed
+            echo "Output: $output\n";
+        } else {
+            echo "Invalid selection. Exiting.\n";
+        }
+        break;
+}

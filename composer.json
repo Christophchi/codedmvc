@@ -1,0 +1,22 @@
+{
+    "name": "codedwebltd/microservice",
+    "description": "a payment gateway php package developed by christopher okoye",
+    "type": "library",
+    "license": "BSD",
+    "autoload": {
+        "psr-4": {
+            "Codedwebltd\\Microservice\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "christopher okoye"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "league/plates": "v3.x-dev",
+        "vlucas/phpdotenv": "^5.6@dev",
+        "symfony/var-dumper": "5.4.x-dev"
+    }
+}
