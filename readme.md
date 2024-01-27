@@ -19,14 +19,24 @@ To use Codedmvc in your project:
 
 1. Clone the repository: `[https://github.com/Christophchi/codedmvc.git]`
 
-2. upload the clone to your server/localhost and visit your browser.
+2. upload the clone to your server/localhost and visit your browser. if you
+are in a local environment, you need to start the server using the command below.
 
-3. To add more endpoints/url, navigate to /src/Routes/web.php within the switch statement create a new case following the same pattern provided in the code. a contact us page would look like this. the contact inside the render method is your php file within the /src/views/contact.php you can manually create this file or using a command line as follows: 
+## Start the server
 
-#  php run create-view Contact
+```php
+php run start ( this will make usse of 127.0.0.1:8000 by default.)
 
+or
 
-## Contact Us
+php run start host-address:host-port (e.g: php run start 127.2.2.2:1919)
+```
+
+3. To add more endpoints/url, navigate to /src/Routes/web.php within the switch statement create a new case following the same pattern provided in the code. a contact us page would look like below. the contact inside the render method is your php file within the /src/views/contact.php you can manually create this file or using a command line as follows: 
+
+## Contact Us steps
+
+## php run create-view Contact
 
 ```php
 case 'contact-us':

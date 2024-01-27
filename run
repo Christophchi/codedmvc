@@ -20,6 +20,12 @@ switch ($command) {
         generateController($extraArg); // Assuming generateController exists in Generator.php
         break;
 
+    case 'start':
+        // Extract host and port from the extra argument
+        list($host, $port) = explode(':', $extraArg) + [null, null];
+        startService($host, $port);
+        break;
+
     default:
         echo "Command not recognized. Available commands:\n";
         // List available suggestions with numbers
@@ -27,15 +33,15 @@ switch ($command) {
             echo ($key + 1) . ". $suggestion\n";
         }
         echo "Please enter the number corresponding to the command you want to execute: ";
-        
+
         // Read user input for suggested command number
         $selectedCommand = readline();
         $selectedCommandIndex = (int)$selectedCommand - 1;
-        
+
         if (isset($view_suggestions[$selectedCommandIndex])) {
             $selectedCommandName = $view_suggestions[$selectedCommandIndex];
             echo "Running command: $selectedCommandName\n";
-            
+
             // Perform the selected command using exec
             $output = exec("php run $selectedCommandName");
             
@@ -46,3 +52,5 @@ switch ($command) {
         }
         break;
 }
+
+

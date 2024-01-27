@@ -83,5 +83,25 @@ function  generateController($controllerName)
 }
 
 
+// New method for the 'start' command
+function startService($host, $port) {
+    $host = $host ?: '127.0.0.1';
+    $port = $port ?: '8000';
+
+    $command = "php -S $host:$port";
+    echo "Starting the service on $host:$port...\n";
+
+    // Use the `exec` function to run the PHP server command
+    exec($command, $output, $returnCode);
+
+    if ($returnCode === 0) {
+        echo "Server started successfully.\n";
+    } else {
+        echo "Failed to start the server.\n";
+    }
+}
+
+
+
 
 
