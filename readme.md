@@ -40,11 +40,41 @@ php run start host-address:host-port (e.g: php run start 127.2.2.2:1919)
 1. first, in your command line within the project directory, type in this command.
 'php run create-view view-name'. (we assume our view name is 'contact' in this tutorial.)
 
-2. then in the /src/Routes/web.php add a new case within the swtch statement using the creatd view name in the format below. the view name is the first argument our render method takes so that is why i passed the contact first. then the second paremeter is the array of data needed within your view. This is completely optional but you may need it with time. to access the data in your contact view fie, you can simply echo it like this <?= $optional_data  ?> this will automatically output (value)
+2. then in the /src/Routes/web.php add a new case within the 'switch' statement using the creatd view name in the format below. the view name is the first argument our render method takes so that is why i passed the contact first. then the second paremeter is the array of data needed within your view. This is completely optional but you may need it with time. to access the data in your contact view fie, you can simply echo it like this <?= $optional_data  ?> this will automatically output (value)
 
 case 'contact':
         echo $templates->render('contact', ['optional_data' => 'value']);
         break;
+```
+
+
+## Steps to create a middleware
+```php
+Automatically Instantiating Global Middleware.
+During the application bootstrapping process, the code iterates through the middleware files within the designated directory. => 'src\Middleware',
+For each middleware file found, it includes the file and checks for classes defined within it.
+Upon discovering these classes, the code instantiates each one all  the middleware instance is stored for global availability throughout the application.
+This automatic instantiation ensures that middleware logic is available across all application endpoints. in the future, we intend to 'use the isGlobal property in the middleware classes to determine global and route specific middleware, then only instantiate the global middlewares across the application lifecycle.'
+
+for now to make a middleware route specific,  you need to create a middleware using the following terminal command,
+
+php run create-middleware middleware-name (About) we assume in this tutorial that middleware name si About. so php run create-middleware About. you can find the generated middleware file in 
+'/src/middleware.' open the generated Aboutmiddleware and locate the  
+
+   public function startAboutmiddleware()
+    {//write the following code.
+        
+
+        //lets determine the route endpoint we want to use this middleware in.
+         $request = $_SERVER['REQUEST_URI']; //output /about
+        
+         if($request == '/about'){
+          //write the middleware logic. this way, the middleware will only run if we are accessing the about endpoint, e.g http://127.0.0.1/about
+          
+         }
+    }
+
+
 ```
 
 ## Structure
