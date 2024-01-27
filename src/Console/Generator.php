@@ -76,6 +76,7 @@ function generateMiddleware($middlewareName) {
 }
 
 
+
 function  generateController($controllerName)
 {
     echo 'passed';

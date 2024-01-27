@@ -1,4 +1,3 @@
-```markdown
 # Codedmvc
 
 Welcome to Codedmvc - a lightweight PHP-based mini-framework developed by Christopher Chibuike.
@@ -18,8 +17,22 @@ Codedmvc serves as a single-entry application providing control over HTTP reques
 
 To use Codedmvc in your project:
 
-1. Clone the repository: `[https://github.com/bcoded200/repository/microservice]`
-2. Follow the installation and usage instructions in the code comments and documentation.
+1. Clone the repository: `[https://github.com/Christophchi/codedmvc.git]`
+
+2. upload the clone to your server/localhost and visit your browser.
+
+3. To add more endpoints/url, navigate to /src/Routes/web.php within the switch statement create a new case following the same pattern provided in the code. a contact us page would look like this. the contact inside the render method is your php file within the /src/views/contact.php you can manually create this file or using a command line as follows: 
+
+#  php run create-view Contact
+
+
+## Contact Us
+
+```php
+case 'contact-us':
+        echo $templates->render('contact', ['optional-data' => 'value']);
+        break;
+```
 
 ## Structure
 - public
@@ -27,7 +40,7 @@ To use Codedmvc in your project:
   - vendor
 - .htaccess
 - boot.php
-- Codedmvc (executable)
+- run (executable)
 - composer.json
 - composer.lock
 - index.php

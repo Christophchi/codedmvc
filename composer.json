@@ -1,6 +1,6 @@
 {
     "name": "codedwebltd/microservice",
-    "description": "a payment gateway php package developed by christopher okoye",
+    "description": "a lightweight PHP-based mini-framework developed by Christopher Chibuike.",
     "type": "library",
     "license": "BSD",
     "autoload": {

@@ -1,20 +1,20 @@
 <?php
 namespace Codedwebltd\Microservice\Middleware;
 
-class {{MIDDLEWARE_NAME}} {
+class Shopmiddleware {
 
     protected $isGlobal = true;
 
     public function __construct()
     {
-        $this->start{{MIDDLEWARE_NAME}}();
+        $this->startShopmiddleware();
     }
 
     /**
     * Middleware Logic starts here
     * @Middleware
     **/
-    public function start{{MIDDLEWARE_NAME}}()
+    public function startShopmiddleware()
     {
         
     }
@@ -27,4 +27,4 @@ class {{MIDDLEWARE_NAME}} {
 // If the 'isGlobal' property is 'true', the middleware instance is stored for global availability throughout the application.
 // This automatic instantiation ensures that global middleware logic is available across all application endpoints.
 
-// new {{MIDDLEWARE_NAME}}(); //Do not uncomment this line to avoid creating double instances of the middleware class.
+// new Shopmiddleware(); //Do not uncomment this line to avoid creating double instances of the middleware class.
