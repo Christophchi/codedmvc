@@ -36,11 +36,14 @@ php run start host-address:host-port (e.g: php run start 127.2.2.2:1919)
 
 ## Steps to create a new view
 
-## php run create-view Contact
-
 ```php
-case 'contact-us':
-        echo $templates->render('contact', ['optional-data' => 'value']);
+1. first, in your command line within the project directory, type in this command.
+'php run create-view view-name'. (we assume our view name is 'contact' in this tutorial.)
+
+2. then in the /src/Routes/web.php add a new case within the swtch statement using the creatd view name in the format below. the view name is the first argument our render method takes so that is why i passed the contact first. then the second paremeter is the array of data needed within your view. This is completely optional but you may need it with time. to access the data in your contact view fie, you can simply echo it like this <?= $optional_data  ?> this will automatically output (value)
+
+case 'contact':
+        echo $templates->render('contact', ['optional_data' => 'value']);
         break;
 ```
 
