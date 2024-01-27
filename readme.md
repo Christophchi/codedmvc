@@ -87,7 +87,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-[![GitHub Stars](https://img.shields.io/github/stars/[Christophchi]/[codedmvc].svg?style=flat&label=Stars)](https://github.com/[Christophchi]/[codedmvc])
-[![GitHub Issues](https://img.shields.io/github/issues/[Your GitHub Username]/[Your Repo Name].svg)](https://github.com/[Your GitHub Username]/[Your Repo Name]/issues)
-[![GitHub Forks](https://img.shields.io/github/forks/[Your GitHub Username]/[Your Repo Name].svg?style=flat&label=Forks)](https://github.com/[Your GitHub Username]/[Your Repo Name]/network)
+[![GitHub Stars](https://img.shields.io/github/stars/[christophchi]/[codedmvc].svg?style=flat&label=Stars)](https://github.com/[christophchi]/[codedmvc])
+[![GitHub Issues](https://img.shields.io/github/issues/[christophchi]/[codedmvc].svg)](https://github.com/[christophchi]/[codedmvc]/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/[christophchi]/[codedmvc].svg?style=flat&label=Forks)](https://github.com/[christophchi]/[codedmvc]/network)
 ```
