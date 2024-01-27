@@ -54,19 +54,21 @@ Automatically Instantiating Global Middleware.
 During the application bootstrapping process, the code iterates through the middleware files within the designated directory. => 'src\Middleware',
 For each middleware file found, it includes the file and checks for classes defined within it.
 Upon discovering these classes, the code instantiates each one all  the middleware instance is stored for global availability throughout the application.
-This automatic instantiation ensures that middleware logic is available across all application endpoints. in the future, we intend to 'use the isGlobal property in the middleware classes to determine global and route specific middleware, then only instantiate the global middlewares across the application lifecycle.'
+This automatic instantiation ensures that middleware logic is available across all application endpoints. in the future, we intend to 'use the isGlobal property in the middleware classes to determine global and route specific middleware, then only instantiate the global middlewares across the application.'
 
-for now to make a middleware route specific,  you need to create a middleware using the following terminal command,
+for now if you wish to make a middleware route specific, so that it dont run everytime the application bootstraps. First you need to create a middleware using the following terminal command,
 
-php run create-middleware middleware-name (About) we assume in this tutorial that middleware name si About. so php run create-middleware About. you can find the generated middleware file in 
-'/src/middleware.' open the generated Aboutmiddleware and locate the  
+php run create-middleware middleware-name (About) we assume in this tutorial that middleware name is About. so php run create-middleware About. 
+you can find the generated middleware file in 
+'/src/middleware.' open the generated Aboutmiddleware and locate the method below.
 
    public function startAboutmiddleware()
-    {//write the following code.
-        
+    {
+        //write the middleware logic inside this method without any condition if you wish to allow it in gobal mode. Which means it will run on every request in our aplication.
 
-        //lets determine the route endpoint we want to use this middleware in.
-         $request = $_SERVER['REQUEST_URI']; //output /about
+        //lets determine a specific route if we wish to run this middleware only when desired  route /endpoint is available in our url. in this tutorial, lets assume we want to run
+        //this middleware only when clients navigates to /about in their url. 
+         $request = $_SERVER['REQUEST_URI']; //output = /about
         
          if($request == '/about'){
           //write the middleware logic. this way, the middleware will only run if we are accessing the about endpoint, e.g http://127.0.0.1/about
